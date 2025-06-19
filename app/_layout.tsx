@@ -1,4 +1,3 @@
-
 import { Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { View, ActivityIndicator } from 'react-native';
@@ -20,10 +19,16 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="dashboard" options={{ title: 'My Notes', headerStyle: { backgroundColor: '#f5f5f5' }, headerTitleStyle: { fontFamily: 'Montserrat-Bold' } }} />
-      <Stack.Screen name="note" options={{ title: 'Note Details', headerStyle: { backgroundColor: '#f5f5f5' }, headerTitleStyle: { fontFamily: 'Montserrat-Bold' } }} />
-      <Stack.Screen name="form" options={{ title: 'Create/Edit Note', headerStyle: { backgroundColor: '#f5f5f5' }, headerTitleStyle: { fontFamily: 'Montserrat-Bold' } }} />
+    <Stack
+      initialRouteName="dashboard"
+      screenOptions={{
+        headerStyle: { backgroundColor: '#f5f5f5' },
+        headerTitleStyle: { fontFamily: 'Montserrat-Bold' },
+      }}
+    >
+      <Stack.Screen name="dashboard" options={{ title: 'My Notes' }} />
+      <Stack.Screen name="note" options={{ title: 'Note Details' }} />
+      <Stack.Screen name="form" options={{ title: 'Create/Edit Note' }} />
     </Stack>
   );
 }
