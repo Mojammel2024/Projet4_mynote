@@ -4,10 +4,19 @@ import { NoteCard } from '../components/NoteCard';
 import { Button } from '../components/Button';
 import { useNotes } from '../hooks/useNote';
 import { colors } from '../constants/Colors';
+import { useFocusEffect } from '@react-navigation/native';
+import { useCallback } from 'react';
 
 export default function Dashboard() {
-  const { notes } = useNotes();
+  const { notes, refreshNotes } = useNotes();
   const router = useRouter();
+
+  // Refresh notes when the screen is focused
+  useFocusEffect(
+    useCallback(() => {
+      refreshNotes();
+    }, [refreshNotes])
+  );
 
   return (
     <View style={styles.container}>
