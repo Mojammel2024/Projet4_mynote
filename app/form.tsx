@@ -3,6 +3,7 @@ import { useRouter, useLocalSearchParams } from 'expo-router';
 import { NoteForm } from '../components/NoteForm';
 import { useNotes } from '../hooks/useNote';
 import { colors } from '../constants/Colors';
+import { Note } from '../utils/storage'; // Import Note interface
 
 export default function FormScreen() {
   const { id } = useLocalSearchParams();

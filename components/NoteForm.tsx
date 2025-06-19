@@ -1,9 +1,10 @@
 import { View, TextInput, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
-import { Note } from '../utils/storage';
+import { Note } from '../utils/storage'; // Import Note interface
 import { priorities } from '../constants/priorities';
 import { colors } from '../constants/Colors';
+import { Button } from './Button'; // Import Button component
 
 interface NoteFormProps {
   note?: Note;
